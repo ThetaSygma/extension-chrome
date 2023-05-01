@@ -1,3 +1,4 @@
+console.log("aa");
 window.addEventListener('load', function () {
     let videoUrl;
     let previousURL;
@@ -32,8 +33,9 @@ if (videoUrl != previousURL) {
     previousURL = videoUrl;
     console.log('Données récupérées de localStorage :', videoData);
 
-    localStorage.setItem('videoData', JSON.stringify(videoData));
-
+    chrome.storage.local.set({ videoData }).then(() => {
+        console.log("Value is set to " + value);
+    });
 }
 setInterval(() => {
     videoData = JSON.parse(localStorage.getItem('videoData')) || {}
@@ -46,7 +48,9 @@ setInterval(() => {
             previousURL = videoUrl;
             console.log('Données récupérées de localStorage :', videoData);
 
-            localStorage.setItem('videoData', JSON.stringify(videoData));
+            chrome.storage.local.set({ videoData }).then(() => {
+                console.log("Value is set to " + value);
+            });
         }
     }
 }, 1000);
