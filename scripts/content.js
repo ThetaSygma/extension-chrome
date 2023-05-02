@@ -1,4 +1,4 @@
-function test() {
+function getVideo() {
     videoData = JSON.parse(localStorage.getItem('videoData')) || {}
     const regex = /watch\?v=/;
     if (regex.test(window.location.href)) {
@@ -20,5 +20,5 @@ let previousURL;
 let videoUrl;
 let videoData;
 window.addEventListener("click", function () {
-    test();
+    getVideo();
 });
