@@ -19,6 +19,6 @@ function getVideo() {
 let previousURL;
 let videoUrl;
 let videoData;
-window.addEventListener("click", function () {
+setInterval(() => {
     getVideo();
-});
+}, 5000);
