@@ -15,7 +15,6 @@ function getVideo() {
         });
     }
 }
-
 let previousURL;
 let videoUrl;
 let videoData;
