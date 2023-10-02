@@ -1,6 +1,5 @@
 chrome.storage.local.get(["videoData"]).then((result) => {
-  let regex = /^\{"videoData":|\}$/g;
-  let finalResults = JSON.stringify(result).replace(regex, '');
+  let finalResults = JSON.stringify(result)
   document.getElementById('output').innerHTML = finalResults;
 });
 
